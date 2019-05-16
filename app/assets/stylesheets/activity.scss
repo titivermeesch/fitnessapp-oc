@@ -1,0 +1,22 @@
+$colors: (
+    deco: #005dff
+);
+
+.activity-info-holder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    color: white;
+
+    .holder {
+        margin: 35% 0;
+
+        i {
+            font-size: 5em;
+        }
+    }
+}
+
+.edit-form {
+    margin-left: 500px;
+}

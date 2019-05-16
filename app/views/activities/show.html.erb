@@ -1,0 +1,77 @@
+<div class="background-shape"></div>
+
+<div class="activity-info-holder">
+            <div class="holder">
+                <i class="fas fa-bicycle activity-type-icon"></i>
+                <p class="activity-type-name"><%= @activity.activity_type %></p>
+            </div>
+            <div class="holder">
+                <i class="far fa-calendar-alt"></i>
+                <p><%= @activity.date %></p>
+            </div>
+            <div class="holder">
+                <i class="fas fa-stopwatch"></i>
+                <p><%= @activity.duration %> Minutes</p>
+            </div>
+        </div>
+<script>
+    const icon = document.getElementsByClassName("activity-type-icon")[0]
+    const type = document.getElementsByClassName("activity-type-name")[0].innerHTML
+    switch (type) {
+        case "Bike":
+            icon.className = "fas fa-bicycle"
+            break
+        case "Volley":
+            icon.className = "fas fa-volleyball-ball"
+            break
+        case "Baseball":
+            icon.className = "fas fa-baseball-ball"
+            break
+        case "Basketball":
+            icon.className = "fas fa-basketball-ball"
+            break
+        case "Hockey":
+            icon.className = "fas fa-hockey-puck"
+            break
+        case "Quidditch":
+            icon.className = "fas fa-quidditch"
+            break
+        case "Swimming":
+            icon.className = "fas fa-swimmer"
+            break
+        case "Strength Training":
+            icon.className = "fas fa-dumbbell"
+            break
+        case "Snowboard":
+            icon.className = "fas fa-snowboarding"
+            break
+        case "Ski":
+            icon.className = "fas fa-skiing"
+            break
+        case "Nordic Ski":
+            icon.className = "fas fa-skiing-nordic"
+            break
+        case "Skate":
+            icon.className = "fas fa-skating"
+            break
+        case "Bowling":
+            icon.className = "fas fa-bowling-ball"
+            break
+        case "Wheelchair":
+            icon.className = "fab fa-accessible-icon"
+            break
+        case "Hiking":
+            icon.className = "fas fa-hiking"
+            break
+        case "Running":
+            icon.className = "fas fa-running"
+            break
+        case "Walking":
+            icon.className = "fas fa-walking"
+            break           
+    }
+
+</script>
+
+<%= button_to 'Edit', edit_activity_path(@activity), :class => "navigate-button", :method => :get %><br/>
+<%= button_to 'Back', root_path, :class => "navigate-button", :method => :get %>

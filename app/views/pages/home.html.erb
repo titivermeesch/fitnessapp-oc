@@ -1,0 +1,40 @@
+<div class="background-shape"></div>
+
+<div class="jumbotron">
+    <div class="title">Motivate yourself</div>
+    <br /><br />
+    <div class="motivation" id="quote">Loading...</div>
+</div>
+
+<%= link_to(new_activity_path, method: :get) do %>
+<button class="activity-add-button">
+    <i class="fas fa-plus-circle"></i>
+</button>
+<% end %> 
+
+<% if !@activities.nil? %>
+<table>
+    <thead class="table100-head">
+        <tr>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @activities.each do |activity| %> <% link = "showLink('#{url_for(activity)}')" %>
+        <tr class="table100-head" onClick="<%= link %>">
+            <%= link_to(activity, method: :get) do %>
+            <td class="column1"><%= activity.activity_type %></td>
+            <td class="column2"><%= activity.duration %> Minutes</td>
+            <td class="column3"><%= activity.date %></td>
+            <% end %>
+        </tr>
+        <% end %>
+
+        <% else %>
+          <p>Activities can't be loaded</p>
+        <% end %>
+    </tbody>
+</table>

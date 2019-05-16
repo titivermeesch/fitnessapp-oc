@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fitnessapp</title>
+        <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+        crossorigin="anonymous" />
+    </head>
+
+    <body>
+        <% if user_signed_in? %>
+        <div class="navbar navbar_logged">
+            <div class="item logo">Move and Groove</div>
+            <div class="nav-spacer"></div>
+            <%= link_to "Dashboard", root_path, :method => "get", :class => "item" %>
+            <%= link_to "New Activity", new_activity_path, :method => "get", :class => "item" %>
+            <%= link_to "Account", edit_user_registration_path, :method => "get", :class => "item "%> 
+            <%= link_to "Logout", destroy_user_session_path, :method => "delete", :class => "item" %>
+        </div>
+        <% else %>
+        <div class="navbar">
+            <div class="item logo">Move and Groove</div>
+            <div class="nav-spacer"></div>
+            <%= link_to "Login", new_user_session_path, :method => "get", :class => "item"%>
+            <%= link_to "Signup", new_user_registration_path, :method => "get", :class => "item "%>
+        </div>
+        <% end %>
+        
+        <%= yield %>
+
+        <div class="footer"><i class="fab fa-facebook-f fa-2x"></i> <i class="fab fa-twitter fa-2x"></i> <i class="fab fa-instagram fa-2x"></i></div>
+    </body>
+</html>

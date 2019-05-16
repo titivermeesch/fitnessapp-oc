@@ -1,0 +1,65 @@
+$colors: (
+    deco: #005dff
+);
+
+.signup-holder {
+    width: 600px;
+    height: 450px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    text-align: center;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0px 0px 32px -15px black;
+
+    h2 {
+        color: map-get($colors, deco);
+    }
+
+    .field {
+        input {
+            margin: 15px;
+            border: map-get($colors, deco) 2px solid;
+            padding-left: 5px;
+            font-size: 17px;
+            height: 40px;
+            width: 60%;
+            border-radius: 5px;
+        }
+    }
+
+    .actions {
+        input {
+            height: 50px;
+            border: none;
+            background-color: map-get($colors, deco);
+            color: white;
+            font-size: 17px;
+            width: 40%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 32px -15px black;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .signup-holder {
+        margin-top: 350px;
+        width: 500px;
+    }
+
+    .background-shape {
+        margin-top: -400px;
+    }
+}

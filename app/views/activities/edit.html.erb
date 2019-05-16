@@ -1,0 +1,8 @@
+<div class="background-shape"></div>
+
+<div class="edit-form">
+<%= render 'form', activity: @activity %>
+</div>
+
+<%= button_to 'Destroy', @activity, method: :delete, data: { confirm: 'Are you sure?' }, :class => "navigate-button" %>
+<%= button_to 'Back', @activity, :class => "navigate-button", :method => :get %>
