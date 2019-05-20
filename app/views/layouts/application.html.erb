@@ -12,7 +12,7 @@
     <body>
         <% if user_signed_in? %>
         <div class="navbar navbar_logged">
-            <div class="item logo">Move and Groove</div>
+            <%= link_to "Move and Groove", root_path, :method => "get", :class => "item logo" %>
             <div class="nav-spacer"></div>
             <%= link_to "Dashboard", root_path, :method => "get", :class => "item" %>
             <%= link_to "New Activity", new_activity_path, :method => "get", :class => "item" %>
